@@ -1,0 +1,12 @@
+{
+  "name": "assignment-04-typescript-app",
+  "version": "1.0.0",
+  "description": "Student Academic Grade & SGPA Performance Calculator built with TypeScript",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}

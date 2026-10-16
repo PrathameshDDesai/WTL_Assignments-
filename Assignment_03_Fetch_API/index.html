@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PulseStore | Async/Await Public API Explorer</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <i class="fa-solid fa-cloud-arrow-down brand-icon"></i>
+        <div>
+          <h2>API Fetch Explorer</h2>
+          <span class="badge-api">Async / Await & DOM Injection</span>
+        </div>
+      </div>
+      <div class="api-meta">
+        <span class="status-indicator online"></span>
+        <span class="api-source">Source: <code>dummyjson.com/products</code></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="main-container">
+    
+    <!-- Controls Toolbar -->
+    <section class="controls-card">
+      <div class="search-wrapper">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search by title, brand, or category...">
+      </div>
+
+      <div class="dropdown-filters">
+        <select id="categoryFilter">
+          <option value="all">All Categories</option>
+        </select>
+
+        <select id="sortFilter">
+          <option value="default">Sort by: Default</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating-desc">Rating: Highest First</option>
+        </select>
+
+        <button class="btn-refresh" id="refreshBtn" title="Re-fetch from API">
+          <i class="fa-solid fa-rotate-right"></i> Refresh
+        </button>
+      </div>
+    </section>
+
+    <!-- Results Status Banner -->
+    <div class="status-bar">
+      <span id="resultsCount">Loading products from public API...</span>
+      <span id="timingInfo"></span>
+    </div>
+
+    <!-- Loading Spinner State -->
+    <div class="state-container" id="loadingState">
+      <div class="spinner"></div>
+      <h4>Fetching Dynamic API Data</h4>
+      <p>Initiating asynchronous HTTP GET request using Fetch API & Async/Await...</p>
+    </div>
+
+    <!-- Error State -->
+    <div class="state-container error-state d-none" id="errorState">
+      <i class="fa-solid fa-triangle-exclamation error-icon"></i>
+      <h3>API Request Failed</h3>
+      <p id="errorMessage">Unable to fetch products. Check network connectivity or CORS headers.</p>
+      <button class="btn-primary" id="retryBtn">
+        <i class="fa-solid fa-arrows-rotate"></i> Retry Fetch
+      </button>
+    </div>
+
+    <!-- Products Dynamic Grid -->
+    <section class="products-grid" id="productsGrid">
+      <!-- Injected dynamically via DOM manipulation -->
+    </section>
+
+  </main>
+
+  <!-- Product Details Modal -->
+  <div class="modal-backdrop d-none" id="productModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+      <div id="modalContent">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <p>&copy; 2026 Academic Laboratory Submissions | Web Development Lab Assignment 03</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

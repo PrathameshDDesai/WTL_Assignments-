@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JWT Auth & Protected Routes Console</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; color: #f1f5f9; }
+    h1, h2, h3, h4, .brand { font-family: 'Outfit', sans-serif; }
+    .card { background-color: #111827; border: 1px solid #1f2937; border-radius: 14px; }
+    pre { background: #030712; border: 1px solid #1f2937; padding: 14px; border-radius: 8px; color: #38bdf8; max-height: 280px; overflow-y: auto; font-size: 0.85rem; }
+    .token-box { word-break: break-all; font-family: monospace; font-size: 0.78rem; background: #030712; padding: 10px; border-radius: 6px; border: 1px dashed #374151; color: #34d399; }
+  </style>
+</head>
+<body class="py-4">
+
+  <div class="container">
+    <header class="d-flex justify-content-between align-items-center pb-3 mb-4 border-bottom border-secondary">
+      <div>
+        <h2 class="fw-bold mb-1"><i class="bi bi-shield-lock-fill text-warning me-2"></i>JWT Authentication & Protected Routes</h2>
+        <span class="text-secondary small">Assignment 11: Server-Side Authentication with Node.js, Express, JWT, & MongoDB</span>
+      </div>
+      <div>
+        <span class="badge bg-primary py-2 px-3"><i class="bi bi-key-fill me-1"></i> JWT Token Bearer Auth</span>
+      </div>
+    </header>
+
+    <div class="row g-4">
+      <!-- Left Column: Forms -->
+      <div class="col-lg-6">
+        
+        <!-- Registration Form -->
+        <div class="card p-4 shadow-sm mb-4">
+          <h5 class="fw-bold text-info mb-3"><i class="bi bi-person-plus-fill me-2"></i>1. Register Account (POST /api/auth/register)</h5>
+          <form id="regForm" class="row g-2">
+            <div class="col-6">
+              <input type="text" id="regName" class="form-control form-control-sm bg-dark text-white border-secondary" placeholder="Full Name" value="Gaurav Deshmukh" required>
+            </div>
+            <div class="col-6">
+              <input type="email" id="regEmail" class="form-control form-control-sm bg-dark text-white border-secondary" placeholder="Email" value="gaurav@sanjivani.edu.in" required>
+            </div>
+            <div class="col-6">
+              <input type="password" id="regPass" class="form-control form-control-sm bg-dark text-white border-secondary" placeholder="Password (min 6 chars)" value="Secret@123" required>
+            </div>
+            <div class="col-6">
+              <select id="regRole" class="form-select form-select-sm bg-dark text-white border-secondary">
+                <option value="student" selected>Role: Student</option>
+                <option value="faculty">Role: Faculty</option>
+                <option value="admin">Role: Admin</option>
+              </select>
+            </div>
+            <div class="col-12 mt-2">
+              <button type="submit" class="btn btn-info btn-sm w-100 fw-bold">Register & Generate JWT</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Login Form -->
+        <div class="card p-4 shadow-sm mb-4">
+          <h5 class="fw-bold text-success mb-3"><i class="bi bi-box-arrow-in-right me-2"></i>2. User Login (POST /api/auth/login)</h5>
+          <form id="loginForm" class="row g-2">
+            <div class="col-6">
+              <input type="email" id="loginEmail" class="form-control form-control-sm bg-dark text-white border-secondary" placeholder="Registered Email" value="gaurav@sanjivani.edu.in" required>
+            </div>
+            <div class="col-6">
+              <input type="password" id="loginPass" class="form-control form-control-sm bg-dark text-white border-secondary" placeholder="Password" value="Secret@123" required>
+            </div>
+            <div class="col-12 mt-2">
+              <button type="submit" class="btn btn-success btn-sm w-100 fw-bold">Authenticate & Obtain Token</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Token Storage Card -->
+        <div class="card p-4 shadow-sm">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h6 class="fw-bold mb-0 text-warning"><i class="bi bi-ticket-perforated me-1"></i> Active Bearer Token</h6>
+            <button class="btn btn-sm btn-outline-danger py-0 px-2" onclick="clearToken()">Clear</button>
+          </div>
+          <div id="tokenDisplay" class="token-box">No token stored. Please Register or Login.</div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Protected Route Triggers & Response -->
+      <div class="col-lg-6">
+        <div class="card p-4 shadow-sm mb-4">
+          <h5 class="fw-bold text-white mb-3"><i class="bi bi-lock-fill text-warning me-2"></i>3. Test Protected Endpoints</h5>
+          <p class="text-secondary small mb-3">Requests automatically attach <code>Authorization: Bearer &lt;token&gt;</code>:</p>
+
+          <div class="d-flex flex-column gap-2">
+            <button class="btn btn-outline-light text-start d-flex justify-content-between align-items-center" onclick="callProtected('/api/auth/profile')">
+              <span><i class="bi bi-person-badge text-info me-2"></i>GET /api/auth/profile (Logged-in User)</span>
+              <span class="badge bg-secondary">Auth Required</span>
+            </button>
+
+            <button class="btn btn-outline-light text-start d-flex justify-content-between align-items-center" onclick="callProtected('/api/academic/dashboard')">
+              <span><i class="bi bi-speedometer2 text-success me-2"></i>GET /api/academic/dashboard (Student Dashboard)</span>
+              <span class="badge bg-secondary">Auth Required</span>
+            </button>
+
+            <button class="btn btn-outline-light text-start d-flex justify-content-between align-items-center" onclick="callProtected('/api/academic/faculty-portal')">
+              <span><i class="bi bi-award text-primary me-2"></i>GET /api/academic/faculty-portal (Faculty Only)</span>
+              <span class="badge bg-warning text-dark">Faculty / Admin</span>
+            </button>
+
+            <button class="btn btn-outline-light text-start d-flex justify-content-between align-items-center" onclick="callProtected('/api/academic/admin-portal')">
+              <span><i class="bi bi-sliders text-danger me-2"></i>GET /api/academic/admin-portal (Admin Console)</span>
+              <span class="badge bg-danger">Admin Only</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Response Viewer -->
+        <div class="card p-4 shadow-sm">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="fw-bold mb-0 text-white">Server Response</h5>
+            <span id="resBadge" class="badge bg-secondary">Ready</span>
+          </div>
+          <pre id="resViewer">{ "status": "Ready to test endpoints" }</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentToken = localStorage.getItem('jwt_test_token') || '';
+    updateTokenDisplay();
+
+    function setToken(token) {
+      currentToken = token;
+      localStorage.setItem('jwt_test_token', token);
+      updateTokenDisplay();
+    }
+
+    function clearToken() {
+      currentToken = '';
+      localStorage.removeItem('jwt_test_token');
+      updateTokenDisplay();
+      showResponse('Token cleared', 200, { message: 'Token reset from local storage' });
+    }
+
+    function updateTokenDisplay() {
+      const el = document.getElementById('tokenDisplay');
+      el.textContent = currentToken ? currentToken : 'No token stored. Please Register or Login.';
+    }
+
+    function showResponse(statusText, code, data) {
+      const badge = document.getElementById('resBadge');
+      badge.textContent = `HTTP ${code} ${statusText}`;
+      badge.className = code >= 200 && code < 300 ? 'badge bg-success' : 'badge bg-danger';
+      document.getElementById('resViewer').textContent = JSON.stringify(data, null, 2);
+    }
+
+    // Register
+    document.getElementById('regForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      try {
+        const body = {
+          name: document.getElementById('regName').value,
+          email: document.getElementById('regEmail').value,
+          password: document.getElementById('regPass').value,
+          role: document.getElementById('regRole').value
+        };
+        const res = await fetch('/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+        const data = await res.json();
+        if (data.token) setToken(data.token);
+        showResponse(res.statusText, res.status, data);
+      } catch (err) {
+        showResponse('Error', 500, { error: err.toString() });
+      }
+    });
+
+    // Login
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      try {
+        const body = {
+          email: document.getElementById('loginEmail').value,
+          password: document.getElementById('loginPass').value
+        };
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+        const data = await res.json();
+        if (data.token) setToken(data.token);
+        showResponse(res.statusText, res.status, data);
+      } catch (err) {
+        showResponse('Error', 500, { error: err.toString() });
+      }
+    });
+
+    // Call Protected Route
+    async function callProtected(endpoint) {
+      try {
+        const headers = { 'Content-Type': 'application/json' };
+        if (currentToken) {
+          headers['Authorization'] = `Bearer ${currentToken}`;
+        }
+        const res = await fetch(endpoint, { method: 'GET', headers });
+        const data = await res.json();
+        showResponse(res.statusText, res.status, data);
+      } catch (err) {
+        showResponse('Error', 500, { error: err.toString() });
+      }
+    }
+  </script>
+</body>
+</html>

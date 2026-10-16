@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GradePulse | Academic Course & SGPA Calculator (TypeScript)</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="wrapper">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="ts-badge"><i class="fa-brands fa-js"></i> TS</div>
+        <div>
+          <h1>Academic Grade & SGPA Performance Portal</h1>
+          <p class="subtitle">Strongly-typed client-side grade evaluation engine built with TypeScript</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="btn-secondary" onclick="window.print()">
+          <i class="fa-solid fa-print"></i> Print Transcript
+        </button>
+      </div>
+    </header>
+
+    <!-- Scorecards Summary Row -->
+    <div class="summary-cards">
+      <div class="score-card primary-score">
+        <span class="score-label">Semester SGPA</span>
+        <div class="score-val" id="sgpaDisplay">0.00</div>
+        <span class="standing-tag" id="standingBadge">Calculating...</span>
+      </div>
+
+      <div class="score-card">
+        <span class="score-label">Total Credits Registered</span>
+        <div class="score-val text-dark" id="totalCreditsDisplay">0</div>
+        <span class="score-sub">Enrolled Scheme Weight</span>
+      </div>
+
+      <div class="score-card">
+        <span class="score-label">Earned Credits</span>
+        <div class="score-val text-success" id="earnedCreditsDisplay">0</div>
+        <span class="score-sub">Successfully Cleared</span>
+      </div>
+
+      <div class="score-card">
+        <span class="score-label">Courses Count</span>
+        <div class="score-val text-dark" id="totalCoursesDisplay">0</div>
+        <span class="score-sub">Subject Modules</span>
+      </div>
+    </div>
+
+    <!-- Main Content Layout -->
+    <div class="main-layout">
+      
+      <!-- Course Entry Form -->
+      <div class="form-container">
+        <h3><i class="fa-solid fa-book-open"></i> Add Academic Course</h3>
+        <p class="form-desc">Provide course syllabus code, credits, and awarded grade.</p>
+
+        <form id="courseForm">
+          <div class="field-group">
+            <label>Course Code *</label>
+            <input type="text" id="courseCode" placeholder="e.g. CS501" required>
+          </div>
+
+          <div class="field-group">
+            <label>Course Title *</label>
+            <input type="text" id="courseTitle" placeholder="e.g. Distributed Systems" required>
+          </div>
+
+          <div class="form-row">
+            <div class="field-group">
+              <label>Credits (1 - 6) *</label>
+              <input type="number" id="credits" min="1" max="6" value="3" required>
+            </div>
+
+            <div class="field-group">
+              <label>Course Type</label>
+              <select id="courseType">
+                <option value="Theory">Theory</option>
+                <option value="Laboratory">Laboratory</option>
+                <option value="Project">Project</option>
+                <option value="Seminar">Seminar</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label>Awarded Grade *</label>
+            <select id="grade" required>
+              <option value="O">O (Outstanding - 10 GP)</option>
+              <option value="A+">A+ (Excellent - 9 GP)</option>
+              <option value="A" selected>A (Very Good - 8 GP)</option>
+              <option value="B+">B+ (Good - 7 GP)</option>
+              <option value="B">B (Above Average - 6 GP)</option>
+              <option value="C">C (Average - 5 GP)</option>
+              <option value="P">P (Pass - 4 GP)</option>
+              <option value="F">F (Fail - 0 GP)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            <i class="fa-solid fa-plus"></i> Add Course to Evaluation
+          </button>
+        </form>
+
+        <!-- Grading Legend -->
+        <div class="grading-legend">
+          <h5><i class="fa-solid fa-circle-info"></i> SPPU / Autonomous Grading System</h5>
+          <div class="legend-items">
+            <span>O: 10</span> • <span>A+: 9</span> • <span>A: 8</span> • <span>B+: 7</span> • <span>B: 6</span> • <span>C: 5</span> • <span>P: 4</span> • <span>F: 0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Courses Table -->
+      <div class="table-container">
+        <div class="table-header-bar">
+          <h3><i class="fa-solid fa-graduation-cap"></i> Enrolled Semester Courses</h3>
+          <button class="btn-text" id="clearAllBtn">
+            <i class="fa-regular fa-trash-can"></i> Clear All
+          </button>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Code</th>
+                <th>Course Name</th>
+                <th>Credits</th>
+                <th>Grade</th>
+                <th>Points (C × G)</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="coursesTableBody">
+              <!-- Rendered via TypeScript / dist/app.js -->
+            </tbody>
+          </table>
+
+          <div class="empty-state" id="emptyStateRow">
+            <i class="fa-solid fa-folder-open"></i>
+            <p>No courses added yet. Use the form to enter courses.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="app-footer">
+      <p>&copy; 2026 Academic Submissions | TypeScript Client Application (Assignment 04)</p>
+    </footer>
+  </div>
+
+  <script type="module" src="dist/app.js"></script>
+</body>
+</html>

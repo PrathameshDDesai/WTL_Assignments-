@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskMaster | Dynamic To-Do List Application</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-title">
+        <div class="logo-icon">
+          <i class="fa-solid fa-list-check"></i>
+        </div>
+        <div>
+          <h1>TaskMaster</h1>
+          <p class="subtitle">Organize your academic & daily priorities seamlessly</p>
+        </div>
+      </div>
+      <div class="date-badge" id="currentDateDisplay">Today</div>
+    </header>
+
+    <!-- Progress Overview Card -->
+    <div class="progress-card">
+      <div class="progress-info">
+        <div>
+          <h3>Productivity Overview</h3>
+          <p id="progressStatus">0 of 0 tasks completed</p>
+        </div>
+        <div class="percentage-circle" id="progressPercentage">0%</div>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progressBarFill"></div>
+      </div>
+    </div>
+
+    <!-- Task Input Form -->
+    <form class="task-form" id="taskForm">
+      <div class="input-row">
+        <div class="input-group main-input">
+          <i class="fa-solid fa-plus input-icon"></i>
+          <input type="text" id="taskInput" placeholder="What needs to be accomplished?" autocomplete="off" required>
+        </div>
+      </div>
+
+      <div class="form-controls-row">
+        <div class="control-item">
+          <label><i class="fa-solid fa-flag"></i> Priority</label>
+          <select id="prioritySelect">
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+
+        <div class="control-item">
+          <label><i class="fa-solid fa-tag"></i> Category</label>
+          <select id="categorySelect">
+            <option value="Academic">Academic</option>
+            <option value="Project">Project</option>
+            <option value="Personal">Personal</option>
+            <option value="Urgent">Urgent</option>
+          </select>
+        </div>
+
+        <div class="control-item">
+          <label><i class="fa-regular fa-calendar"></i> Due Date</label>
+          <input type="date" id="dueDateInput">
+        </div>
+
+        <button type="submit" class="btn-primary" id="submitBtn">
+          <i class="fa-solid fa-plus"></i> Add Task
+        </button>
+      </div>
+    </form>
+
+    <!-- Filter & Search Toolbar -->
+    <div class="toolbar">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search tasks...">
+      </div>
+
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="active">Active</button>
+        <button class="filter-tab" data-filter="completed">Completed</button>
+      </div>
+    </div>
+
+    <!-- Tasks List -->
+    <div class="tasks-container">
+      <ul class="task-list" id="taskList">
+        <!-- Rendered dynamically via JavaScript -->
+      </ul>
+
+      <!-- Empty State -->
+      <div class="empty-state d-none" id="emptyState">
+        <div class="empty-icon"><i class="fa-regular fa-calendar-check"></i></div>
+        <h3>No tasks found</h3>
+        <p>You're all caught up or no tasks match your search filter.</p>
+      </div>
+    </div>
+
+    <!-- Footer Stats & Actions -->
+    <footer class="app-footer">
+      <div class="task-counts">
+        <span id="activeCount">0 active</span> • <span id="completedCount">0 completed</span>
+      </div>
+      <button class="btn-text text-danger" id="clearCompletedBtn">
+        <i class="fa-regular fa-trash-can"></i> Clear Completed
+      </button>
+    </footer>
+  </div>
+
+  <!-- Edit Task Modal -->
+  <div class="modal-overlay d-none" id="editModalOverlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Edit Task</h3>
+        <button class="btn-close" id="closeEditModalBtn">&times;</button>
+      </div>
+      <form id="editTaskForm">
+        <input type="hidden" id="editTaskId">
+        <div class="modal-field">
+          <label>Task Title</label>
+          <input type="text" id="editTaskTitle" required>
+        </div>
+        <div class="modal-field">
+          <label>Priority</label>
+          <select id="editTaskPriority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+        <div class="modal-field">
+          <label>Category</label>
+          <select id="editTaskCategory">
+            <option value="Academic">Academic</option>
+            <option value="Project">Project</option>
+            <option value="Personal">Personal</option>
+            <option value="Urgent">Urgent</option>
+          </select>
+        </div>
+        <div class="modal-field">
+          <label>Due Date</label>
+          <input type="date" id="editTaskDueDate">
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" id="cancelEditBtn">Cancel</button>
+          <button type="submit" class="btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

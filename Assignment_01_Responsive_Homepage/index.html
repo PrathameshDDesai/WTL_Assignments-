@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediPulse | Super Speciality Hospital & Healthcare Portal</title>
+  
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Google Fonts (Outfit & Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Emergency Bar -->
+  <div class="top-bar py-2 text-white bg-dark">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+      <div class="d-flex align-items-center gap-3 font-small">
+        <span><i class="bi bi-geo-alt-fill text-danger me-1"></i> Sanjivani Health City, Kopargaon</span>
+        <span class="d-none d-md-inline">|</span>
+        <span><i class="bi bi-clock-fill text-warning me-1"></i> 24/7 Emergency & Trauma Care</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+911800123456" class="text-white text-decoration-none fw-semibold">
+          <i class="bi bi-telephone-fill text-success me-1"></i> Helpline: 1800-123-456
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm py-3" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#home">
+        <div class="brand-icon">
+          <i class="bi bi-heart-pulse-fill text-primary fs-3"></i>
+        </div>
+        <span class="brand-text">Medi<span class="text-primary">Pulse</span></span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-medium gap-lg-2">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Specialities</a></li>
+          <li class="nav-item"><a class="nav-link" href="#doctors">Doctors</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
+          <button class="btn btn-primary rounded-pill px-4 py-2 shadow-sm fw-semibold" data-bs-toggle="modal" data-bs-target="#appointmentModal">
+            <i class="bi bi-calendar2-check me-1"></i> Book Appointment
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section py-5" id="home">
+    <div class="container py-lg-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <div class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill mb-3 fw-semibold">
+            <i class="bi bi-shield-check me-1"></i> NABH & JCI Accredited Healthcare
+          </div>
+          <h1 class="display-4 fw-extrabold text-dark mb-3 lh-sm">
+            Advanced Medical Care With a <span class="gradient-text">Human Touch</span>
+          </h1>
+          <p class="lead text-secondary mb-4">
+            MediPulse provides world-class clinical expertise, cutting-edge surgical robotics, and 24/7 dedicated critical care services tailored for you and your family.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <button class="btn btn-primary btn-lg rounded-pill px-4 shadow" data-bs-toggle="modal" data-bs-target="#appointmentModal">
+              <i class="bi bi-calendar-plus me-2"></i>Schedule a Visit
+            </button>
+            <a href="#services" class="btn btn-outline-secondary btn-lg rounded-pill px-4">
+              Explore Services <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="row mt-5 pt-3 g-3 border-top">
+            <div class="col-6 col-sm-3">
+              <h3 class="fw-bold text-primary mb-0">120+</h3>
+              <p class="text-muted small mb-0">Expert Doctors</p>
+            </div>
+            <div class="col-6 col-sm-3">
+              <h3 class="fw-bold text-primary mb-0">50k+</h3>
+              <p class="text-muted small mb-0">Patients Cured</p>
+            </div>
+            <div class="col-6 col-sm-3">
+              <h3 class="fw-bold text-primary mb-0">24/7</h3>
+              <p class="text-muted small mb-0">Emergency Care</p>
+            </div>
+            <div class="col-6 col-sm-3">
+              <h3 class="fw-bold text-primary mb-0">99.4%</h3>
+              <p class="text-muted small mb-0">Satisfaction Rate</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="hero-card position-relative p-4 rounded-4 shadow-lg bg-white border">
+            <div class="emergency-badge d-flex align-items-center gap-3 p-3 bg-danger-subtle rounded-3 mb-4">
+              <div class="icon-circle bg-danger text-white rounded-circle d-flex align-items-center justify-content-center">
+                <i class="bi bi-ambulance fs-4"></i>
+              </div>
+              <div>
+                <h6 class="mb-0 text-danger fw-bold">Emergency Ambulance</h6>
+                <small class="text-muted">Instant Dispatch within 15 mins</small>
+              </div>
+            </div>
+            <h5 class="fw-bold text-dark mb-3">Quick OPD Consultation</h5>
+            <form id="heroQuickForm">
+              <div class="mb-3">
+                <label class="form-label small text-muted">Patient Full Name</label>
+                <input type="text" class="form-control rounded-3" placeholder="e.g. Rahul Sharma" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label small text-muted">Speciality Needed</label>
+                <select class="form-select rounded-3" required>
+                  <option value="">Select Department...</option>
+                  <option value="cardio">Cardiology</option>
+                  <option value="neuro">Neurology</option>
+                  <option value="ortho">Orthopedics</option>
+                  <option value="pedia">Pediatrics</option>
+                  <option value="general">General Medicine</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label small text-muted">Phone Number</label>
+                <input type="tel" class="form-control rounded-3" placeholder="+91 98765 43210" required>
+              </div>
+              <button type="submit" class="btn btn-primary w-100 py-2 rounded-3 fw-semibold">
+                Request Call Back
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Key Specialities Section -->
+  <section class="py-5 bg-light" id="services">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge bg-primary-subtle text-primary px-3 py-1 rounded-pill fw-semibold">Centers of Excellence</span>
+        <h2 class="fw-bold text-dark mt-2">Comprehensive Specialities</h2>
+        <p class="text-muted">Providing world-class medical treatments equipped with international standard infrastructure and senior faculty.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Service 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-3 p-lg-4">
+            <div class="service-icon bg-primary-subtle text-primary rounded-4 mb-3 d-flex align-items-center justify-content-center">
+              <i class="bi bi-heart-pulse fs-2"></i>
+            </div>
+            <h5 class="fw-bold text-dark">Cardiology & Heart Care</h5>
+            <p class="text-secondary small">Comprehensive cardiac diagnostics, angioplasty, pacemaker implantation, and bypass surgeries with state-of-the-art Cath Labs.</p>
+            <a href="#appointmentModal" data-bs-toggle="modal" class="fw-semibold text-primary text-decoration-none mt-auto">Book Doctor <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-3 p-lg-4">
+            <div class="service-icon bg-success-subtle text-success rounded-4 mb-3 d-flex align-items-center justify-content-center">
+              <i class="bi bi-activity fs-2"></i>
+            </div>
+            <h5 class="fw-bold text-dark">Neurology & Spine</h5>
+            <p class="text-secondary small">Comprehensive treatment for stroke management, epilepsy, Parkinson's disease, and robotic spinal decompression surgeries.</p>
+            <a href="#appointmentModal" data-bs-toggle="modal" class="fw-semibold text-success text-decoration-none mt-auto">Book Doctor <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-3 p-lg-4">
+            <div class="service-icon bg-warning-subtle text-warning-emphasis rounded-4 mb-3 d-flex align-items-center justify-content-center">
+              <i class="bi bi-person-wheelchair fs-2"></i>
+            </div>
+            <h5 class="fw-bold text-dark">Orthopedics & Joints</h5>
+            <p class="text-secondary small">Minimally invasive joint replacement, sports injury rehab, arthroscopy, and complex fracture trauma care.</p>
+            <a href="#appointmentModal" data-bs-toggle="modal" class="fw-semibold text-warning-emphasis text-decoration-none mt-auto">Book Doctor <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-3 p-lg-4">
+            <div class="service-icon bg-info-subtle text-info-emphasis rounded-4 mb-3 d-flex align-items-center justify-content-center">
+              <i class="bi bi-capsule-pill fs-2"></i>
+            </div>
+            <h5 class="fw-bold text-dark">24/7 Pharmacy & Diagnostics</h5>
+            <p class="text-secondary small">NABL certified high-speed pathology labs, 3T MRI, CT Scan, and automated genuine drug dispensing pharmacy counters.</p>
+            <a href="#appointmentModal" data-bs-toggle="modal" class="fw-semibold text-info-emphasis text-decoration-none mt-auto">Explore Tests <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-3 p-lg-4">
+            <div class="service-icon bg-danger-subtle text-danger rounded-4 mb-3 d-flex align-items-center justify-content-center">
+              <i class="bi bi-emoji-smile fs-2"></i>
+            </div>
+            <h5 class="fw-bold text-dark">Pediatrics & Neonatal Care</h5>
+            <p class="text-secondary small">Level-III NICU, child vaccination programs, pediatric surgery, and developmental child psychology clinics.</p>
+            <a href="#appointmentModal" data-bs-toggle="modal" class="fw-semibold text-danger text-decoration-none mt-auto">Book Doctor <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-3 p-lg-4">
+            <div class="service-icon bg-secondary-subtle text-dark rounded-4 mb-3 d-flex align-items-center justify-content-center">
+              <i class="bi bi-hospital fs-2"></i>
+            </div>
+            <h5 class="fw-bold text-dark">Emergency & Trauma Care</h5>
+            <p class="text-secondary small">Immediate triage, dedicated ICU resuscitation bays, burns unit, and life-support ambulance network.</p>
+            <a href="tel:1800123456" class="fw-semibold text-danger text-decoration-none mt-auto">Emergency Call <i class="bi bi-telephone"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctors Section -->
+  <section class="py-5 bg-white" id="doctors">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge bg-primary-subtle text-primary px-3 py-1 rounded-pill fw-semibold">Medical Team</span>
+        <h2 class="fw-bold text-dark mt-2">Meet Our Specialists</h2>
+        <p class="text-muted">Over 120+ senior doctors and internationally trained consultants dedicated to patient wellness.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Doctor 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card doctor-card border-0 shadow-sm rounded-4 overflow-hidden text-center h-100">
+            <div class="doctor-avatar-wrapper bg-primary-subtle py-4">
+              <div class="doctor-avatar mx-auto bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm">
+                <i class="bi bi-person-fill fs-1 text-primary"></i>
+              </div>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <h5 class="fw-bold mb-1">Dr. Rajesh Kulkarni</h5>
+              <p class="text-primary small fw-semibold mb-2">Chief Cardiologist, MD, DM</p>
+              <p class="text-muted small mb-3">18+ Years Experience in Interventional Cardiology</p>
+              <button class="btn btn-outline-primary btn-sm rounded-pill mt-auto" data-bs-toggle="modal" data-bs-target="#appointmentModal">Book Consultation</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Doctor 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card doctor-card border-0 shadow-sm rounded-4 overflow-hidden text-center h-100">
+            <div class="doctor-avatar-wrapper bg-success-subtle py-4">
+              <div class="doctor-avatar mx-auto bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm">
+                <i class="bi bi-person-fill fs-1 text-success"></i>
+              </div>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <h5 class="fw-bold mb-1">Dr. Sneha Patil</h5>
+              <p class="text-success small fw-semibold mb-2">Senior Neurologist, MBBS, DM</p>
+              <p class="text-muted small mb-3">14+ Years in Stroke and Brain Injury Interventions</p>
+              <button class="btn btn-outline-success btn-sm rounded-pill mt-auto" data-bs-toggle="modal" data-bs-target="#appointmentModal">Book Consultation</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Doctor 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card doctor-card border-0 shadow-sm rounded-4 overflow-hidden text-center h-100">
+            <div class="doctor-avatar-wrapper bg-warning-subtle py-4">
+              <div class="doctor-avatar mx-auto bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm">
+                <i class="bi bi-person-fill fs-1 text-warning"></i>
+              </div>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <h5 class="fw-bold mb-1">Dr. Amit Deshmukh</h5>
+              <p class="text-warning-emphasis small fw-semibold mb-2">Orthopedic Surgeon, MS</p>
+              <p class="text-muted small mb-3">Joint Replacement & Robotic Arthroscopy Specialist</p>
+              <button class="btn btn-outline-warning btn-sm rounded-pill mt-auto" data-bs-toggle="modal" data-bs-target="#appointmentModal">Book Consultation</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Doctor 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card doctor-card border-0 shadow-sm rounded-4 overflow-hidden text-center h-100">
+            <div class="doctor-avatar-wrapper bg-danger-subtle py-4">
+              <div class="doctor-avatar mx-auto bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm">
+                <i class="bi bi-person-fill fs-1 text-danger"></i>
+              </div>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <h5 class="fw-bold mb-1">Dr. Ananya Roy</h5>
+              <p class="text-danger small fw-semibold mb-2">Head Pediatrician, MD</p>
+              <p class="text-muted small mb-3">12+ Years Care in Infant Care & Pediatric Critical Medicine</p>
+              <button class="btn btn-outline-danger btn-sm rounded-pill mt-auto" data-bs-toggle="modal" data-bs-target="#appointmentModal">Book Consultation</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Patient Reviews / Testimonials -->
+  <section class="py-5 bg-light" id="testimonials">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge bg-primary-subtle text-primary px-3 py-1 rounded-pill fw-semibold">Patient Stories</span>
+        <h2 class="fw-bold text-dark mt-2">What Our Patients Say</h2>
+        <p class="text-muted">Real stories of care, recovery, and compassionate service.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+            <div class="d-flex text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-secondary mb-4 fst-italic">"The emergency response team at MediPulse saved my father's life during a sudden cardiac arrest. Dr. Kulkarni and the nursing staff are angels on earth."</p>
+            <div class="d-flex align-items-center gap-3 mt-auto">
+              <div class="avatar-sm rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold">VS</div>
+              <div>
+                <h6 class="mb-0 fw-bold">Vikram Shinde</h6>
+                <small class="text-muted">Pune, Maharashtra</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+            <div class="d-flex text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-secondary mb-4 fst-italic">"Underwent robotic knee replacement surgery here. I was able to walk without crutches in less than 3 weeks! Exemplary hygiene and care."</p>
+            <div class="d-flex align-items-center gap-3 mt-auto">
+              <div class="avatar-sm rounded-circle bg-success text-white d-flex align-items-center justify-content-center fw-bold">MP</div>
+              <div>
+                <h6 class="mb-0 fw-bold">Meena Patil</h6>
+                <small class="text-muted">Nashik, Maharashtra</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+            <div class="d-flex text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-secondary mb-4 fst-italic">"Clean rooms, transparent billing, and wonderful pediatric staff who kept my 4-year-old completely calm and comfortable during his surgery."</p>
+            <div class="d-flex align-items-center gap-3 mt-auto">
+              <div class="avatar-sm rounded-circle bg-danger text-white d-flex align-items-center justify-content-center fw-bold">SK</div>
+              <div>
+                <h6 class="mb-0 fw-bold">Suresh Kadam</h6>
+                <small class="text-muted">Ahmednagar, Maharashtra</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white pt-5 pb-4" id="contact">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-heart-pulse-fill text-primary fs-2"></i>
+            <span class="fs-4 fw-bold">Medi<span class="text-primary">Pulse</span></span>
+          </div>
+          <p class="text-secondary small">
+            MediPulse Super Speciality Hospital is committed to delivering quality medical treatments, surgical excellence, and empathetic patient care 24 hours a day, 365 days a year.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">Departments</h6>
+          <ul class="list-unstyled text-secondary small d-flex flex-column gap-2">
+            <li><a href="#services" class="footer-link">Cardiology</a></li>
+            <li><a href="#services" class="footer-link">Neurology</a></li>
+            <li><a href="#services" class="footer-link">Orthopedics</a></li>
+            <li><a href="#services" class="footer-link">Pediatrics</a></li>
+            <li><a href="#services" class="footer-link">Radiology</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">Patient Portal</h6>
+          <ul class="list-unstyled text-secondary small d-flex flex-column gap-2">
+            <li><a href="#" class="footer-link" data-bs-toggle="modal" data-bs-target="#appointmentModal">Book OPD</a></li>
+            <li><a href="#" class="footer-link">Lab Test Reports</a></li>
+            <li><a href="#" class="footer-link">Insurance TPA</a></li>
+            <li><a href="#" class="footer-link">Visitor Guidelines</a></li>
+            <li><a href="#" class="footer-link">Emergency Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <h6 class="text-white fw-bold mb-3">Emergency Contact</h6>
+          <p class="text-secondary small mb-2"><i class="bi bi-geo-alt me-2 text-danger"></i> Sanjivani Knowledge City, Kopargaon - 423603</p>
+          <p class="text-secondary small mb-2"><i class="bi bi-telephone me-2 text-success"></i> 24x7 Ambulance: +91 1800 123 456</p>
+          <p class="text-secondary small mb-3"><i class="bi bi-envelope me-2 text-primary"></i> care@medipulse.org</p>
+          
+          <div class="p-3 bg-secondary bg-opacity-10 rounded-3">
+            <div class="d-flex align-items-center justify-content-between">
+              <span class="small fw-semibold text-warning"><i class="bi bi-dot fs-4 text-success align-middle"></i> Emergency OPD Status:</span>
+              <span class="badge bg-success">Active 24x7</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-top border-secondary pt-3 text-center text-secondary small">
+        <p class="mb-0">&copy; 2026 MediPulse Super Speciality Hospital. All rights reserved. | Developed for Academic Lab Assignment 01.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Appointment Modal -->
+  <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg rounded-4">
+        <div class="modal-header border-0 pb-0">
+          <div>
+            <h5 class="modal-title fw-bold" id="appointmentModalLabel"><i class="bi bi-calendar2-heart text-primary me-2"></i>Book an Appointment</h5>
+            <small class="text-muted">Fill out the form below to secure your consultation slot.</small>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="appointmentForm">
+            <div class="mb-3">
+              <label class="form-label small fw-semibold">Patient Name *</label>
+              <input type="text" class="form-control rounded-3" id="patientName" placeholder="Enter full name" required>
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-md-6">
+                <label class="form-label small fw-semibold">Phone Number *</label>
+                <input type="tel" class="form-control rounded-3" id="patientPhone" placeholder="+91 9876543210" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label small fw-semibold">Email</label>
+                <input type="email" class="form-control rounded-3" id="patientEmail" placeholder="patient@example.com">
+              </div>
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-md-6">
+                <label class="form-label small fw-semibold">Speciality *</label>
+                <select class="form-select rounded-3" id="specialitySelect" required>
+                  <option value="">Select Speciality</option>
+                  <option value="Cardiology">Cardiology</option>
+                  <option value="Neurology">Neurology</option>
+                  <option value="Orthopedics">Orthopedics</option>
+                  <option value="Pediatrics">Pediatrics</option>
+                  <option value="Diagnostics">General Medicine</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label small fw-semibold">Preferred Date *</label>
+                <input type="date" class="form-control rounded-3" id="appointmentDate" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-semibold">Additional Note / Symptoms</label>
+              <textarea class="form-control rounded-3" rows="2" placeholder="Briefly describe your health concern"></textarea>
+            </div>
+            <div id="bookingAlert" class="alert d-none small py-2 mb-3"></div>
+            <button type="submit" class="btn btn-primary w-100 py-2 rounded-3 fw-semibold shadow-sm">
+              Confirm & Book OPD Slot
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

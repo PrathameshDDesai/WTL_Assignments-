@@ -1,0 +1,112 @@
+{
+  "info": {
+    "_postman_id": "a9-student-api-collection",
+    "name": "Assignment 09 - Express RESTful Student API",
+    "description": "Collection of Postman requests to verify GET, POST, PUT, DELETE operations for student data",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. GET Server Diagnostic Info",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/info",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "info"]
+        }
+      }
+    },
+    {
+      "name": "2. GET All Students",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/students",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "students"]
+        }
+      }
+    },
+    {
+      "name": "3. GET Student by ID (ID: 1)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/students/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "students", "1"]
+        }
+      }
+    },
+    {
+      "name": "4. POST Create Student",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rollNo\": \"2023COMP88\",\n  \"name\": \"Sameer Khan\",\n  \"email\": \"sameer.khan@sanjivani.edu.in\",\n  \"department\": \"Computer Engineering\",\n  \"semester\": \"SEM-V\",\n  \"gpa\": 9.15\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/students",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "students"]
+        }
+      }
+    },
+    {
+      "name": "5. PUT Update Student (ID: 2)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Isha Deshmukh-Patil\",\n  \"gpa\": 9.40\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/students/2",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "students", "2"]
+        }
+      }
+    },
+    {
+      "name": "6. DELETE Student (ID: 3)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/students/3",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "students", "3"]
+        }
+      }
+    }
+  ]
+}

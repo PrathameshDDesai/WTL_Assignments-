@@ -1,0 +1,141 @@
+{
+  "info": {
+    "_postman_id": "a11-jwt-auth-collection",
+    "name": "Assignment 11 - JWT Authentication & Protected Routes",
+    "description": "Postman requests testing User Registration, Login, Token Generation, and Protected Routes with Role Checks",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. POST Register User",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = pm.response.json();",
+              "if (jsonData.token) {",
+              "    pm.collectionVariables.set('jwt_token', jsonData.token);",
+              "}"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Gaurav Deshmukh\",\n  \"email\": \"gaurav@sanjivani.edu.in\",\n  \"password\": \"Secret@123\",\n  \"role\": \"student\",\n  \"department\": \"Computer Engineering\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "auth", "register"]
+        }
+      }
+    },
+    {
+      "name": "2. POST Login & Obtain JWT Token",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = pm.response.json();",
+              "if (jsonData.token) {",
+              "    pm.collectionVariables.set('jwt_token', jsonData.token);",
+              "}"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"gaurav@sanjivani.edu.in\",\n  \"password\": \"Secret@123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "auth", "login"]
+        }
+      }
+    },
+    {
+      "name": "3. GET Protected User Profile",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwt_token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/auth/profile",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "auth", "profile"]
+        }
+      }
+    },
+    {
+      "name": "4. GET Student Academic Dashboard (Protected)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwt_token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/academic/dashboard",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "academic", "dashboard"]
+        }
+      }
+    },
+    {
+      "name": "5. GET Admin Console (Requires Role: 'admin')",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwt_token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/academic/admin-portal",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "academic", "admin-portal"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "jwt_token",
+      "value": ""
+    }
+  ]
+}

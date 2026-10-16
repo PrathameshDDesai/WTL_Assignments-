@@ -1,0 +1,80 @@
+export const INITIAL_COURSES = [
+  {
+    id: 1,
+    title: 'Modern Full-Stack React & Next.js Masterclass',
+    category: 'Web Development',
+    level: 'Intermediate',
+    instructor: 'Prof. Aniket Joshi',
+    rating: 4.9,
+    reviews: 1420,
+    price: 499,
+    hours: '32 hrs',
+    tag: 'Bestseller',
+    color: '#3b82f6'
+  },
+  {
+    id: 2,
+    title: 'Advanced MongoDB Architecture & Query Optimization',
+    category: 'Database',
+    level: 'Advanced',
+    instructor: 'Dr. Priya Patil',
+    rating: 4.8,
+    reviews: 920,
+    price: 399,
+    hours: '24 hrs',
+    tag: 'Trending',
+    color: '#10b981'
+  },
+  {
+    id: 3,
+    title: 'Complete TypeScript from Scratch to Enterprise',
+    category: 'Programming',
+    level: 'Beginner',
+    instructor: 'Er. Rohan Mehta',
+    rating: 4.7,
+    reviews: 2100,
+    price: 299,
+    hours: '18 hrs',
+    tag: 'Hot',
+    color: '#3178c6'
+  },
+  {
+    id: 4,
+    title: 'Cloud DevOps with Docker, Kubernetes & AWS',
+    category: 'DevOps',
+    level: 'Advanced',
+    instructor: 'Dr. Sameer Kulkarni',
+    rating: 4.9,
+    reviews: 1850,
+    price: 599,
+    hours: '40 hrs',
+    tag: 'Featured',
+    color: '#f59e0b'
+  },
+  {
+    id: 5,
+    title: 'UI/UX Design Systems with Figma & TailwindCSS',
+    category: 'Design',
+    level: 'Beginner',
+    instructor: 'Sneha Deshmukh',
+    rating: 4.6,
+    reviews: 780,
+    price: 349,
+    hours: '16 hrs',
+    tag: 'New',
+    color: '#ec4899'
+  },
+  {
+    id: 6,
+    title: 'Node.js Microservices, REST APIs & JWT Security',
+    category: 'Backend',
+    level: 'Intermediate',
+    instructor: 'Vikram Sharma',
+    rating: 4.8,
+    reviews: 1140,
+    price: 449,
+    hours: '28 hrs',
+    tag: 'Popular',
+    color: '#8b5cf6'
+  }
+];

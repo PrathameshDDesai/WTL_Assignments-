@@ -1,0 +1,144 @@
+/* MediPulse Hospital Custom CSS */
+:root {
+  --primary-color: #0d6efd;
+  --primary-dark: #0a58ca;
+  --secondary-color: #0dcaf0;
+  --dark-color: #0f172a;
+  --light-bg: #f8fafc;
+  --card-border: #e2e8f0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #334155;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .brand-text {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-small {
+  font-size: 0.85rem;
+}
+
+.max-w-700 {
+  max-w: 700px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #0d6efd 0%, #00b4d8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Navbar */
+#mainNav {
+  transition: all 0.3s ease-in-out;
+}
+
+#mainNav .nav-link {
+  color: #475569;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+#mainNav .nav-link:hover, #mainNav .nav-link.active {
+  color: #0d6efd;
+  background-color: #eff6ff;
+}
+
+/* Hero Section */
+.hero-section {
+  background: radial-gradient(circle at top left, #eff6ff 0%, #ffffff 70%);
+}
+
+.hero-card {
+  transition: transform 0.3s ease;
+}
+
+.hero-card:hover {
+  transform: translateY(-4px);
+}
+
+.icon-circle {
+  width: 48px;
+  height: 48px;
+}
+
+/* Service Cards */
+.service-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  background: #ffffff;
+  border: 1px solid var(--card-border) !important;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px -10px rgba(13, 110, 253, 0.12) !important;
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+}
+
+/* Doctor Cards */
+.doctor-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--card-border) !important;
+}
+
+.doctor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.doctor-avatar {
+  width: 90px;
+  height: 90px;
+}
+
+.avatar-sm {
+  width: 44px;
+  height: 44px;
+}
+
+/* Footer Styling */
+.footer-link {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.social-link {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.social-link:hover {
+  background: #0d6efd;
+  color: #ffffff;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
