@@ -1,5 +1,11 @@
 # Assignment 02: Dynamic To-Do List Web Application
 
+[![Live Demo](https://img.shields.io/badge/Render-Live%20Demo-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://wtl-assignment-02-todolist.onrender.com/)
+
+**🌐 Live Deployment URL:** [https://wtl-assignment-02-todolist.onrender.com/](https://wtl-assignment-02-todolist.onrender.com/)
+
+---
+
 ## 1. Title
 Create a dynamic To-do List web application with interactive task management and client-side persistence using HTML5, CSS3, and JavaScript (ES6).
 

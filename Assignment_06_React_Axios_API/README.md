@@ -1,5 +1,11 @@
 # Assignment 06: React API Data Fetching with Axios, Loading & Error States
 
+[![Live Demo](https://img.shields.io/badge/Render-Live%20Demo-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://wtl-assignment-06-react-axios1.onrender.com/)
+
+**🌐 Live Deployment URL:** [https://wtl-assignment-06-react-axios1.onrender.com/](https://wtl-assignment-06-react-axios1.onrender.com/)
+
+---
+
 ## 1. Title
 Write a React application utilizing the Axios HTTP client library to fetch data from a public REST API, display the response across functional components, and manage front-end loading and error boundaries.
 

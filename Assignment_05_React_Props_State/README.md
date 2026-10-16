@@ -1,5 +1,11 @@
 # Assignment 05: React Functional Components, JSX, Props & `useState` Hook
 
+[![Live Demo](https://img.shields.io/badge/Render-Live%20Demo-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://wtl-assignment-05-react-props.onrender.com/)
+
+**🌐 Live Deployment URL:** [https://wtl-assignment-05-react-props.onrender.com/](https://wtl-assignment-05-react-props.onrender.com/)
+
+---
+
 ## 1. Title
 Create a React application using JSX with functional components, passing data using props and managing dynamic state using the `useState` hook.
 

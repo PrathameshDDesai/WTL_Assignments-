@@ -1,5 +1,11 @@
 # Assignment 08: PHP Student Management System with MySQL CRUD via XAMPP
 
+[![Live Demo](https://img.shields.io/badge/Render-Live%20Demo-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://wtl-assignment-08-php-crud.onrender.com/)
+
+**🌐 Live Deployment URL:** [https://wtl-assignment-08-php-crud.onrender.com/](https://wtl-assignment-08-php-crud.onrender.com/)
+
+---
+
 ## 1. Title
 Create a simple PHP web application that manages a list of students using CRUD operations (Create, Read, Update, Delete) and interacts with a MySQL database through XAMPP.
 

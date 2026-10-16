@@ -1,5 +1,11 @@
 # Assignment 01: Responsive Homepage Design
 
+[![Live Demo](https://img.shields.io/badge/Render-Live%20Demo-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://wtl-assignment-01-homepage.onrender.com/)
+
+**🌐 Live Deployment URL:** [https://wtl-assignment-01-homepage.onrender.com/](https://wtl-assignment-01-homepage.onrender.com/)
+
+---
+
 ## 1. Title
 Design and develop a responsive homepage for a healthcare/hospital website using HTML5, CSS3, and Bootstrap 5.
 

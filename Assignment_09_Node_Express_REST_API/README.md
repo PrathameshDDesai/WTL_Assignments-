@@ -1,5 +1,11 @@
 # Assignment 09: Node.js & Express.js RESTful API Backend Server
 
+[![Live Demo](https://img.shields.io/badge/Render-Live%20Demo-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://wtl-assignment-09-express-api.onrender.com/)
+
+**🌐 Live Deployment URL:** [https://wtl-assignment-09-express-api.onrender.com/](https://wtl-assignment-09-express-api.onrender.com/)
+
+---
+
 ## 1. Title
 Write code using Node.js and Express.js to create a back-end server serving static files and JSON routes, then implement a complete RESTful API with GET, POST, PUT, and DELETE operations for student data, verified using Postman.
 

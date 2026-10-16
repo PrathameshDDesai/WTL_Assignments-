@@ -1,5 +1,11 @@
 # Assignment 11: Server-Side User Authentication with JWT & Protected Routes
 
+[![Live Demo](https://img.shields.io/badge/Render-Live%20Demo-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://wtl-assignment-11-jwt-auth.onrender.com/)
+
+**🌐 Live Deployment URL:** [https://wtl-assignment-11-jwt-auth.onrender.com/](https://wtl-assignment-11-jwt-auth.onrender.com/)
+
+---
+
 ## 1. Title
 Implement server-side user authentication using JSON Web Tokens (JWT), password hashing via Bcrypt, and role-protected API routes using Node.js, Express.js, and MongoDB.
 
@@ -43,7 +49,7 @@ npm start
 ```
 
 ### Step 3: Interactive Browser Console
-Navigate to `http://localhost:5000/` in your browser.
+Navigate to [https://wtl-assignment-11-jwt-auth.onrender.com/](https://wtl-assignment-11-jwt-auth.onrender.com/) in your browser:
 1. Fill the registration form to register and automatically store a signed JWT.
 2. Click any of the protected route buttons:
    - `/api/auth/profile`

@@ -1,5 +1,11 @@
 # Assignment 04: Client-Side Interactive Web Application using TypeScript
 
+[![Live Demo](https://img.shields.io/badge/Render-Live%20Demo-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://wtl-assignment-04-typescript.onrender.com/)
+
+**🌐 Live Deployment URL:** [https://wtl-assignment-04-typescript.onrender.com/](https://wtl-assignment-04-typescript.onrender.com/)
+
+---
+
 ## 1. Title
 Develop a web-based client-side application using TypeScript featuring custom data structures, strict interfaces, DOM interactivity, and dynamic academic GPA calculation.
 

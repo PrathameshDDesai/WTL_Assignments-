@@ -1,5 +1,11 @@
 # Assignment 03: Public API Data Fetching using Async/Await & DOM Manipulation
 
+[![Live Demo](https://img.shields.io/badge/Render-Live%20Demo-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://wtl-assignment-03-fetch-api.onrender.com/)
+
+**🌐 Live Deployment URL:** [https://wtl-assignment-03-fetch-api.onrender.com/](https://wtl-assignment-03-fetch-api.onrender.com/)
+
+---
+
 ## 1. Title
 Write a JavaScript program to fetch data from a public REST API using the Fetch API and `async/await` syntax, and dynamically display the results using DOM manipulation.
 

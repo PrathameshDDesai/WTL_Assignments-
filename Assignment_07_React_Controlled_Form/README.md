@@ -1,5 +1,11 @@
 # Assignment 07: User Registration Form with React Controlled Components & Validation
 
+[![Live Demo](https://img.shields.io/badge/Render-Live%20Demo-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://wtl-assignment-07-react-form.onrender.com/)
+
+**🌐 Live Deployment URL:** [https://wtl-assignment-07-react-form.onrender.com/](https://wtl-assignment-07-react-form.onrender.com/)
+
+---
+
 ## 1. Title
 Build a user registration form in React using controlled components, implementing validation for required fields, phone numbers, password complexity, and email formatting with regular expressions.
 

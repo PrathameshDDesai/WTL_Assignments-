@@ -1,5 +1,11 @@
 # Assignment 10: MongoDB Mongoose CRUD & Serverless Summary Function
 
+[![Live Demo](https://img.shields.io/badge/Render-Live%20Demo-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://wtl-assignment-10-mongodb.onrender.com/)
+
+**🌐 Live Deployment URL:** [https://wtl-assignment-10-mongodb.onrender.com/](https://wtl-assignment-10-mongodb.onrender.com/)
+
+---
+
 ## 1. Title
 Connect a Node.js backend to MongoDB using Mongoose, implement student CRUD operations via Express routes, and implement an independent Serverless Function (Vercel/Netlify compatible) for read-only analytical summaries.
 
@@ -35,9 +41,9 @@ npm start
 ```
 
 ### Step 3: Endpoints Available
-- **Local Express CRUD**: `http://localhost:5000/api/students`
-- **Serverless Summary (Local Simulation)**: `http://localhost:5000/api/summary`
-- **Vercel Deployment**: Run `npx vercel` inside this folder to deploy live to Vercel's global edge network!
+- **Live Render Web Dashboard**: `https://wtl-assignment-10-mongodb.onrender.com/`
+- **MongoDB CRUD Endpoint**: `https://wtl-assignment-10-mongodb.onrender.com/api/students`
+- **Serverless Summary Function**: `https://wtl-assignment-10-mongodb.onrender.com/api/summary`
 
 ## 6. Test Cases
 | Test ID | Method | Endpoint | Description | Expected Status |
